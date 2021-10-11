@@ -1,0 +1,37 @@
+<div class="container" style="width: 900px; height: 900px;">
+    <mat-grid-list class="card-create-grid" cols="2" rowHeight="400px">
+        <mat-grid-tile>
+            <mat-card class="card-image">
+                <img mat-card-image src="../../assets/ygback.jpg" alt="Photo of a Shiba Inu">
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <form class="form-card" [formGroup]="cardForm" (ngSubmit)="createCard()">
+                <p>
+                    <mat-form-field appearance="standard">
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" required formControlName="name">
+                        <mat-icon matSuffix>label</mat-icon>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="standard">
+                        <mat-label>Owner</mat-label>
+                        <input matInput type="text" required formControlName="owner">
+                        <mat-icon matSuffix>person</mat-icon>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="standard">
+                        <mat-label>For Sale</mat-label>
+                        <input matInput type="number" required formControlName="price">
+                        <mat-icon matSuffix>sell</mat-icon>
+                    </mat-form-field>
+                </p>
+    
+                <button type="submit" mat-flat-button color="primary">CREATE COLLECTIBLE</button>
+            </form>
+            
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

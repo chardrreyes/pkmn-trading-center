@@ -1,0 +1,37 @@
+.container {
+    width: 900px;
+}
+
+.card-container {
+    max-width: 900px;
+}
+
+.collectible-card {
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.card-grid {
+    margin-top: 15px;
+}
+
+.title-name {
+    text-align: center;
+}
+
+.owner-name {
+    text-align: center;
+}
+
+.card-buy-btn {
+    text-align: center;
+}
+
+.filter-group {
+    margin-top: 15px;
+    .filter-label {
+        cursor: pointer;;
+    }
+}
+
