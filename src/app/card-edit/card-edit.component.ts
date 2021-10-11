@@ -55,4 +55,10 @@ export class CardEditComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  getImage() {
+    const cardDetails = this.cardForm.value;
+    const image = (cardDetails.image) ? cardDetails.image : '../../assets/default.png'
+    return image
+  }
+
 }

@@ -1,11 +1,11 @@
 <div class="container">
-    <button mat-stroked-button>Return</button>
+    <button mat-stroked-button [routerLink]="''">Return</button>
     <div class="card-update" *ngIf="isExisted">
         <mat-card>
             <mat-grid-list cols="1" rowHeight="300px">
                 <mat-grid-tile>
                     <mat-card class="card-image">
-                        <img mat-card-image src="../../assets/default.png" width="200" alt="Photo of a default">
+                        <img mat-card-image [src]="getImage()" width="200" alt="Photo of a default">
                     </mat-card>
                 </mat-grid-tile>
                 <mat-grid-tile>
