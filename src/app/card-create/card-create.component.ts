@@ -45,7 +45,6 @@ export class CardCreateComponent implements OnInit {
       } else {
         cardValue.id = this.cardService.generateId();
       }
-      console.log(cardValue);
       // check if user is accessing via module or routes
       this.snackBarService.openSnackBar('Card created successfully', 'Ok');
       if (this.isModule) {
