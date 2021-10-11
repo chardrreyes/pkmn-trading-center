@@ -17,7 +17,7 @@ export class CardEditComponent implements OnInit {
     name: new FormControl('',[Validators.required]),
     owner: new FormControl('',[Validators.required]),
     price: new FormControl('',[Validators.required]),
-    picture: new FormControl('',),
+    image: new FormControl(''),
   });
   isExisted = false;
   cardId = 0;
@@ -30,7 +30,6 @@ export class CardEditComponent implements OnInit {
         if(route) {
           // check if card is existing
           const card: CardDetails = this.cardService.getCard(route.id);
-          console.log(card);
           this.isExisted = (card.id > 0) ? true : false;
           if (!this.isExisted) {
             this.snackBarService.openSnackBar('Card doesnt exist. Please create.', 'Ok');

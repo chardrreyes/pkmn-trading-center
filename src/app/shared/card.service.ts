@@ -11,23 +11,23 @@ export class CardService {
       name: 'Charizard',
       owner: 'Red',
       price: 15,
-      image: '../../assets/ygback.jpg',
+      image: '../../assets/chr.png',
       isSold: false
     },
     {
       id: 2,
-      name: 'Dark Magician',
-      owner: 'Yugi',
+      name: 'Blastoise',
+      owner: 'Blue',
       price: 25,
-      image: '../../assets/ygback.jpg',
+      image: '../../assets/bt.png',
       isSold: false
     },
     {
       id: 3,
-      name: 'Ylvetal',
-      owner: 'Ash',
+      name: 'Metapod',
+      owner: 'Green',
       price: 55,
-      image: '../../assets/ygback.jpg',
+      image: '../../assets/mt.png',
       isSold: true
     }
   ]

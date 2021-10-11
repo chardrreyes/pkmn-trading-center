@@ -49,11 +49,20 @@ export class IndexComponent implements OnInit {
     }
   }
 
-  buyCard(id: number) {
+  buyCard(id: number, name: string) {
     this.cardService.buyCard(id);
+    this.snackbarService.openSnackBar(name + ' has been sold.', 'Ok');
     this.cardList = this.cardService.getAllCard();
   }
 
+  routeCreate(event: any) {
+    // to change the route base on instruction
+    // since im using modular component
+    if(event.index == 1) {
+      this.router.navigate(['card']);
+    } else if(event.index == 0) {
+      this.router.navigate(['']);
+    }
   
-
+  }
 }

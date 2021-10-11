@@ -1,9 +1,10 @@
-<div class="container" style="width: 900px; height: 900px;">
+<div class="container">
+    
     <mat-grid-list class="card-create-grid" cols="2" rowHeight="400px">
         <mat-grid-tile>
-            <mat-card class="card-image">
-                <img mat-card-image src="../../assets/ygback.jpg" alt="Photo of a Shiba Inu">
-            </mat-card>
+            <div class="card-image">
+                <img mat-card-image src="../../assets/default.png" width="200" alt="Photo of a default ">
+            </div>
         </mat-grid-tile>
         <mat-grid-tile>
             <form class="form-card" [formGroup]="cardForm" (ngSubmit)="createCard()">

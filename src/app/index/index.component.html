@@ -1,6 +1,6 @@
 <div class="container">
     <mat-card class="card-container">
-        <mat-tab-group [(selectedIndex)]=selectedIndex>
+        <mat-tab-group [(selectedIndex)]=selectedIndex (selectedTabChange)="routeCreate($event)">
             <mat-tab label="All Collectibles">
                 <div class="filter-group">
                     <h4>
@@ -13,14 +13,14 @@
                 <mat-grid-list [cols]="columnBreakpoint" class="card-grid" (window:resize)="getBreakpoint($event)" rowHeight="400px">
                     <mat-grid-tile *ngFor="let card of cardList">
                         <mat-card class="collectible-card">
-                            <img (click)="viewCard(card.id)" mat-card-image src='https://material.angular.io/assets/img/examples/shiba2.jpg' alt="Photo of the card">
+                            <img (click)="viewCard(card.id)" mat-card-image [src]="card.image" alt="Photo of the card">
                             <mat-card-title class="title-name">{{card.name}}</mat-card-title>
                             <mat-divider></mat-divider>
                             <mat-card-content class="owner-name">
                                 Owner: {{card.owner}}
                             </mat-card-content>
                             <mat-card-actions class="card-buy-btn" >
-                              <button mat-flat-button color="primary" (click)="buyCard(card.id)" *ngIf="!card.isSold">Buy ${{card.price}}</button>
+                              <button mat-flat-button color="primary" (click)="buyCard(card.id, card.name)" *ngIf="!card.isSold">Buy ${{card.price}}</button>
                               <button mat-flat-button color="primary" disabled="true" *ngIf="card.isSold">SOLD</button>
                             </mat-card-actions>
                         </mat-card>
@@ -28,7 +28,7 @@
                 </mat-grid-list>
 
             </mat-tab>
-            <mat-tab label="Create" [routerLink]="'/card'">
+            <mat-tab label="Create" >
                 <app-card-create (cardCreationEvent)="addToList($event)"></app-card-create>
             </mat-tab>
         </mat-tab-group>

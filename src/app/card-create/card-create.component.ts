@@ -20,7 +20,7 @@ export class CardCreateComponent implements OnInit {
     name: new FormControl('',[Validators.required]),
     owner: new FormControl('',[Validators.required]),
     price: new FormControl('',[Validators.required]),
-    picture: new FormControl(''),
+    image: new FormControl('../../assets/default.png'),
     isSold: new FormControl(false,[Validators.required]),
   });
   isModule = true;
