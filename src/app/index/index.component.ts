@@ -13,7 +13,8 @@ export class IndexComponent implements OnInit {
   columnBreakpoint = 3;
   selectedIndex = 0;
   cardList: CardDetails[] = [];
-  urlLength = 0
+  urlLength = 0;
+  filter:string = 'all';
 
   constructor(private snackbarService: SnackbarService, private cardService: CardService, private route: ActivatedRoute, private router: Router) { }
 
@@ -26,6 +27,7 @@ export class IndexComponent implements OnInit {
   }
 
   getBreakpoint(event: any) {
+    // todo: update this type of code
     this.columnBreakpoint = (event.target.innerWidth <= 940) ? 2 : 3;
   }
 
@@ -41,10 +43,13 @@ export class IndexComponent implements OnInit {
 
   filterList(filter: string) {
     if (filter == 'sold') {
+      this.filter='sold';
       this.cardList = this.cardService.getAllSoldCard();
     } else if(filter == 'sale') {
+      this.filter='sale';
       this.cardList = this.cardService.getAllSaleCard();
     } else {
+      this.filter='all';
       this.cardList = this.cardService.getAllCard();
     }
   }
